@@ -38,10 +38,7 @@ it-literature-shop-backend/
    ```bash
    npm i
    ```
-2. **Salin ENV**
-   ```bash
-   cp .env.example .env
-   ```
+2. **Bikin ENV**
    Isi `DATABASE_URL` dengan **Neon Postgres** connection string dan `JWT_SECRET` dengan string acak.
 3. **Prisma Setup**
    ```bash
