@@ -28,7 +28,7 @@ it-literature-shop-backend/
 │     ├─ genre/router.ts
 │     ├─ book/router.ts
 │     └─ transaction/router.ts
-├─ .env.example
+├─ .env
 ├─ package.json
 └─ tsconfig.json
 ```
@@ -90,11 +90,3 @@ curl -s -XPOST localhost:8080/genre -H "authorization: Bearer $TOKEN"   -H "cont
 # create book
 curl -s -XPOST localhost:8080/books -H "authorization: Bearer $TOKEN"   -H "content-type: application/json"   -d '{"title":"Dummy Book","writer":"Anon","publisher":"ITS Press","publication_year":2025,"price":50000,"stock_quantity":50,"genre_id":"<GENRE_ID>"}'
 ```
-
-## Penyesuaian ke Dokumen Praktikum
-- Response format telah mengikuti `{ success, message, data }`.
-- Endpoint dipisah per modul (`/auth`, `/books`, `/genre`, `/transactions`).
-- Health check `/health` mengembalikan tanggal.
-- Seluruh logika menggunakan **TypeScript** dan **JWT**.
-
-Selamat mencoba dan semoga lancar demo-nya!
