@@ -17,17 +17,19 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-// Health check (must return current date)
+// ✅ Health check
 app.get("/health", (_req, res) => {
   const now = new Date().toISOString();
   return ok(res, "OK", { date: now });
 });
 
+// ✅ Main routes
 app.use("/auth", authRouter);
-app.use("/genre", genreRouter);
+app.use("/genres", genreRouter); // <-- perbaikan di sini
 app.use("/books", bookRouter);
 app.use("/transactions", transactionRouter);
 
+// ✅ Global error handler
 app.use(errorHandler);
 
 export default app;
